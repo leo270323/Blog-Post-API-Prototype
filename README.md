@@ -23,6 +23,13 @@
 
 - Remember to attach the header: `Accept: application/json` for every API request
 - All tests are located in: tests/Feature.
+- Added index on column `author_id` in table `posts`
+- Added an index for the author_id column in the posts table.
+- All API endpoints start with /api (for example: /api/user/1).
+- For the Get User List endpoint (`GET /api/users`), you can pass additional query parameters such as: 'limit' (to limit the number of returned results), `order_by` and `sort_type` (to customize sorting), `email` and `name` (to filter users by email or name). Example:
+`/api/users?limit=3&page=1&order_by=id&sort_type=desc&email=testmail&name=userName`
+- For the Get Post List endpoint (`GET /api/posts`), you can pass parameters such as: `limit` (to limit the number of returned results), `order_by` and `sort_type` (to customize sorting), `title` and `author_id` (to filter posts by title or author). Example:
+`/api/posts?limit=20&page=1&order_by=id&sort_type=asc&author_id=2`
 
 ## A Few Personal Notes
 
