@@ -4,6 +4,31 @@
 - **Language:** PHP 8.x, Laravel 12  
 - **Database:** MySQL (configuration in `.env.example`)
 
+## Project Structure
+
+app/
+ ├── Http/
+ │    ├── Controllers/Api/      → API controllers (UsersController, PostController)
+ │    ├── Requests/             → FormRequest validation (UserRequest, PostRequest)
+ │    ├── Resources/            → API Resources (UserResource, PostResource)
+ │    └── Services/             → Business logic layer (UserService, PostService)
+ ├── Models/                    → Eloquent models (User, Post)
+
+database/
+ ├── factories/                 → UserFactory, PostFactory (fake data for testing)
+ ├── migrations/                → Database schema definitions
+ └── seeders/                   → (optional)
+
+routes/
+ ├── api.php                    → All API routes
+ ├── web.php                    → Web routes (unused but kept by Laravel)
+ └── console.php                → Artisan command routes
+
+tests/
+ ├── Feature/                   → API feature tests (UserTest, PostTest)
+ └── Unit/                      → (optional) unit tests
+
+
 ## How to Run
 
 1. `composer install`
