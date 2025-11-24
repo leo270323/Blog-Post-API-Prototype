@@ -1,7 +1,7 @@
 # Blog Post API Prototype
 
 ## Technologies
-- **Language:** PHP 8.x, Laravel 12  
+- **Language:** PHP 8.3.14, Laravel 12.39.0, Mysql 8
 - **Database:** MySQL (configuration in `.env.example`)
 
 ## Project Structure
@@ -57,7 +57,6 @@ tests/
 `/api/users?limit=3&page=1&order_by=id&sort_type=desc&email=testmail&name=userName`
 - For the Get Post List endpoint (`GET /api/posts`), you can pass parameters such as: `limit` (to limit the number of returned results), `order_by` and `sort_type` (to customize sorting), `title` and `author_id` (to filter posts by title or author). Example:
 `/api/posts?limit=20&page=1&order_by=id&sort_type=asc&author_id=2`
-- Regarding error/exception handling, I decided to handle everything directly inside the controllers (each action/function has its own try/catch block for specific exceptions) instead of handling them globally in `/bootstrap/app.php`. I believe this approach makes debugging easier and keeps the code more clear and explicit.
 
 ## A Few Personal Notes
 
@@ -65,3 +64,4 @@ tests/
 - However, after reviewing the requirements carefully, I realized that for a test assignment or an API prototype, adding authentication would unnecessarily complicate the scope. Another reason is that the test description does not mention any form of authorization or user access control — all APIs are accessible to anyone — so authentication is not required.
 - If authentication were added, many additional cases would arise, such as restricting users so they can only interact with (get, update, delete) their own posts, preventing them from deleting other users’ content, etc. This would introduce a large number of scenarios that go beyond the intended scope of a simple test.
 - For the post-related APIs, I handled two special cases where a post’s author has been deleted, and I also added tests specifically for this scenario.
+- Regarding error/exception handling, I decided to handle everything directly inside the controllers (each action/function has its own try/catch block for specific exceptions) instead of handling them globally in `/bootstrap/app.php`. I believe this approach makes debugging easier and keeps the code more clear and explicit.
