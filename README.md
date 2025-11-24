@@ -6,6 +6,7 @@
 
 ## Project Structure
 
+```txt
 app/
  ├── Http/
  │    ├── Controllers/Api/      → API controllers (UsersController, PostController)
@@ -27,6 +28,7 @@ routes/
 tests/
  ├── Feature/                   → API feature tests (UserTest, PostTest)
  └── Unit/                      → (optional) unit tests
+ ```
 
 
 ## How to Run
