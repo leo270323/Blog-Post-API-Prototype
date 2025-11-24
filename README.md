@@ -30,6 +30,7 @@
 `/api/users?limit=3&page=1&order_by=id&sort_type=desc&email=testmail&name=userName`
 - For the Get Post List endpoint (`GET /api/posts`), you can pass parameters such as: `limit` (to limit the number of returned results), `order_by` and `sort_type` (to customize sorting), `title` and `author_id` (to filter posts by title or author). Example:
 `/api/posts?limit=20&page=1&order_by=id&sort_type=asc&author_id=2`
+- Regarding error/exception handling, I decided to handle everything directly inside the controllers (each action/function has its own try/catch block for specific exceptions) instead of handling them globally in `/bootstrap/app.php`. I believe this approach makes debugging easier and keeps the code more clear and explicit.
 
 ## A Few Personal Notes
 
