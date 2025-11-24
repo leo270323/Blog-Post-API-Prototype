@@ -65,3 +65,4 @@ tests/
 - If authentication were added, many additional cases would arise, such as restricting users so they can only interact with (get, update, delete) their own posts, preventing them from deleting other users’ content, etc. This would introduce a large number of scenarios that go beyond the intended scope of a simple test.
 - For the post-related APIs, I handled two special cases where a post’s author has been deleted, and I also added tests specifically for this scenario.
 - Regarding error/exception handling, I decided to handle everything directly inside the controllers (each action/function has its own try/catch block for specific exceptions) instead of handling them globally in `/bootstrap/app.php`. I believe this approach makes debugging easier and keeps the code more clear and explicit.
+- I also considered implementing rate limiting (Laravel Throttle), but it doesn’t seem necessary for the scope of this test assignment.
