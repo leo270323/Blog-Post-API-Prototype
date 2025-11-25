@@ -18,7 +18,7 @@ class PostResource extends JsonResource
             'id'         => $this->id,
             'title'      => $this->title,
             'content'    => $this->content,
-            'author'     => $this->author()->first(['id', 'name', 'email']),
+            'author'     => ['id' => $this->author_id, 'name' => $this->author_name, 'email' => $this->author_email],
             'created_at' => $this->created_at?->toDateTimeString(),
             'updated_at' => $this->updated_at?->toDateTimeString(),
         ];
